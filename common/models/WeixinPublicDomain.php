@@ -80,7 +80,7 @@ class WeixinPublicDomain extends ActiveRecord
         $result = WeixinPublicDomain::find()
             ->joinWith('publicConfig')
             ->select(['domain'])
-            ->where(['weixin_public_domain.type' => self::TYPE_SAME, 'weixin_public_domain.type' => self::STATUS_OK])
+            ->where(['weixin_public_domain.type' => self::TYPE_SAME, 'weixin_public_domain.status' => self::STATUS_OK])
             ->andWhere(['weixin_public_config.status' => WeixinPublicConfig::STATUS_OK])
             ->limit($limit)
             ->orderBy('rand()')

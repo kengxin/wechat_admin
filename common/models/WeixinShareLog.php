@@ -6,6 +6,12 @@ use yii\behaviors\TimestampBehavior;
 
 class WeixinShareLog extends ActiveRecord
 {
+    const TYPE_TALK = 0;
+
+    const TYPE_FRIEND = 1;
+
+    const TYPE_AD = 2;
+
     public static function tableName()
     {
         return 'weixin_share_log';
@@ -42,6 +48,11 @@ class WeixinShareLog extends ActiveRecord
             'msg' => '信息',
             'created_at' => '创建时间'
         ];
+    }
+
+    public function getPublicConfig()
+    {
+        return $this->hasOne(WeixinPublicConfig::className(), ['id' => 'public_id']);
     }
 
     public function saveLog($url, $type, $app_id, $msg)

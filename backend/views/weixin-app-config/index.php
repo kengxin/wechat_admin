@@ -9,10 +9,7 @@
         'columns' => [
             'id',
             'share_title',
-            'share_thumb',
             'ad_title',
-            'ad_thumb',
-            'ad_url',
             'created_at:datetime',
             [
                 'class' => '\yii\grid\ActionColumn'

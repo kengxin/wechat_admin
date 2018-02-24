@@ -6,7 +6,6 @@ use yii\web\Controller;
 
 class DomainTestController extends Controller
 {
-
     public function actionGetEntrance()
     {
         header("Access-Control-Allow-Origin: *");
