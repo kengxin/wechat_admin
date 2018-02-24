@@ -16,7 +16,7 @@ class DomainTestController extends Controller
             return json_encode([
                 'code' => 0,
                 'data' => [
-                    'url' => $result->domain . '/ll.html'
+                    'url' => "http://{$result->domain}/ll.html"
                 ]
             ]);
         }
